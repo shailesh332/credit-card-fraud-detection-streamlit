@@ -4,6 +4,7 @@ import pandas as pd
 import json
 import plotly.graph_objects as go
 import plotly.express as px
+import os
 
 # --------------------------------------------------
 # PAGE CONFIG
@@ -65,8 +66,16 @@ color:white;
 # --------------------------------------------------
 # LOAD MODEL
 # --------------------------------------------------
-model = joblib.load("../models/final_fraud_model.pkl")
-feature_order = joblib.load("feature_order.pkl")
+
+
+# Get absolute path to project root
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Build correct model path
+model_path = os.path.join(BASE_DIR, "models", "final_fraud_model.pkl")
+
+# Load model
+model = joblib.load(model_path)
 
 with open("best_threshold.txt") as f:
     THRESHOLD = float(f.read().strip())
