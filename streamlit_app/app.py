@@ -79,7 +79,7 @@ model = joblib.load(model_path)
 
 threshold_path = os.path.join(BASE_DIR, "models", "best_threshold.txt")
 
-with open("best_threshold.txt") as f:
+with open(threshold_path) as f:
     THRESHOLD = float(f.read())
 
 # --------------------------------------------------
