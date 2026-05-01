@@ -77,6 +77,8 @@ model_path = os.path.join(BASE_DIR, "models", "final_fraud_model.pkl")
 # Load model
 model = joblib.load(model_path)
 
+threshold_path = os.path.join(BASE_DIR, "models", "best_threshold.txt")
+
 with open("best_threshold.txt") as f:
     THRESHOLD = float(f.read().strip())
 
