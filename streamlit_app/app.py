@@ -65,7 +65,7 @@ color:white;
 # --------------------------------------------------
 # LOAD MODEL
 # --------------------------------------------------
-model = joblib.load("../models/final_fraud_model.pkl")
+model = joblib.load("final_fraud_model.pkl")
 feature_order = joblib.load("feature_order.pkl")
 
 with open("best_threshold.txt") as f:
